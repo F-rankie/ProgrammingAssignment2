@@ -74,7 +74,8 @@ cacheSolve <- function(x, ...) {
     matrix <- x$get()
     
     ## then calculate the inverse of the matrix
-    inv <- solve(matrix)
+    ## any additional arguments for cacheSolve will be passed onto solve()
+    inv <- solve(matrix, ...)
     
     ## and store it in the cache
     x$setinv(inv)
